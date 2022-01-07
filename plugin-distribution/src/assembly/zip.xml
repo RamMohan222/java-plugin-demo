@@ -1,0 +1,36 @@
+<assembly
+	xmlns="[http://maven.apache.org/ASSEMBLY/2.1.0](http://maven.apache.org/ASSEMBLY/2.1.0)"
+	xmlns:xsi="[http://www.w3.org/2001/XMLSchema-instance](http://www.w3.org/2001/XMLSchema-instance)"
+	xsi:schemaLocation="[http://maven.apache.org/ASSEMBLY/2.1.0](http://maven.apache.org/ASSEMBLY/2.1.0) [http://maven.apache.org/xsd/assembly-2.1.0.xsd](http://maven.apache.org/xsd/assembly-2.1.0.xsd)">
+	<id>distribution</id>
+	<formats>
+		<format>zip</format>
+	</formats>
+
+	<includeBaseDirectory>true</includeBaseDirectory>
+	<baseDirectory>${project.name}</baseDirectory>
+
+	<dependencySets>
+		<dependencySet>
+			<!-- <includes>groupId:artifactId:type[:classifier]:version</includes> -->
+			<includes>
+				<include>com.plugin:notification-plugin:*</include>
+				<include>com.plugin:message-plugin:*</include>
+			</includes>
+			<outputDirectory>plugins</outputDirectory>
+		</dependencySet>
+		<dependencySet>
+			<includes>
+				<include>com.plugin:plugin-loader:*</include>
+			</includes>
+			<outputDirectory />
+		</dependencySet>
+	</dependencySets>
+	<files>
+		<file>
+			<source>VERSION</source>
+			<filtered>true</filtered>
+			<outputDirectory/>
+		</file>
+	</files>
+</assembly>
