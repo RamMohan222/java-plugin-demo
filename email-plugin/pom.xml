@@ -7,7 +7,7 @@
 		<artifactId>plugin-demo</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>message-plugin</artifactId>
+	<artifactId>email-plugin</artifactId>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
